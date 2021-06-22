@@ -9,7 +9,10 @@ make
 The purpose of this provider is to assemble fragments of AS3 declarations, the provider is given a root folder and will procede to scan all subfolders.
 
 The structure of the folder looks like this;
+
+```
 <root folder> / <bigip device> / <tenant>
+```
 
 The final output can be checked against a schema.
 
