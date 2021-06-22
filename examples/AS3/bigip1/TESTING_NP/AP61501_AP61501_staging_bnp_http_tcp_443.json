@@ -1,0 +1,212 @@
+{
+    "AP61501_AP61501_staging_bnp_http_tcp_443": {
+        "class": "Application",
+        "template": "generic",
+        "Cert_AP61501_AP61501_staging_bnpparisbas": {
+            "class": "Certificate",
+            "remark": "AP61501.staging.bnpparisbas",
+            "certificate": "-----BEGIN CERTIFICATE-----\nMIIFRzCCAy+gAwIBAgIBATANBgkqhkiG9w0BAQsFADCBmjELMAkGA1UEBhMCRlIx\nFjAUBgNVBAgMDUlsZSBkZSBGcmFuY2UxDjAMBgNVBAcMBVBBUklTMRAwDgYDVQQK\nDAdSb290IENBMRgwFgYDVQQLDA9CTlAgUEFSSVNCQVMgU0ExEDAOBgNVBAMMB1Rl\nc3QgQ0ExJTAjBgkqhkiG9w0BCQEWFm1hc3RlckBibnBwYXJpc2Jhcy5jb20wHhcN\nMjEwNjA4MjEyNjQyWhcNMjQwMzA0MjEyNjQyWjCBjTELMAkGA1UEBhMCRlIxFjAU\nBgNVBAgTDUlsZSBkZSBGcmFuY2UxDjAMBgNVBAcTBVBBUklTMRcwFQYDVQQKEw5C\nTlAgUEFSSUJBUyBTQTEXMBUGA1UECxMOQk5QIFBBUklCQVMgU0ExJDAiBgNVBAMT\nG0FQNjE1MDEuc3RhZ2luZy5ibnBwYXJpc2JhczCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBAM54V4ocwefmwsx352G0wu+MlnciuAbAnJH6raluYyYESAYq\nPUo6Ok4zeuKTAq64mgDf5W3lQ/WynGMV4nHn1Ispllmh6iwz9GI8VjVfnhke4dNu\nPz2BnjEm+SIPxHKOFAWEePgZWAMEBjR0tP7+PUTruAcpV8nG4M1OIJWewnJnwWg5\nm9xqmlqH/KCft2CbyOmYYjjqL/nM4/80fKr4SToch+g7BA5W7R4Rt6W1SmC6Dq5M\n8oANhAy2Ny8AvL/uedY+EDaP7ldqf6kjm4kJBn2KSoPQurGhz1nKgclR4E4hx8G0\ntCMfdDEvtoBijFX8X+mwKZAr9BsYH0dPPBak5UkCAwEAAaOBojCBnzAdBgNVHQ4E\nFgQUD7nLEGqt3EgCBBjGU1p2IU+Vbr8wHwYDVR0jBBgwFoAUerLd8wrnxDp4LOu/\nH6J9OYgVI3UwCQYDVR0TBAIwADALBgNVHQ8EBAMCBaAwHQYDVR0lBBYwFAYIKwYB\nBQUHAwEGCCsGAQUFBwMCMCYGA1UdEQQfMB2CG2FwNjE1MDEuc3RhZ2luZy5ibnBw\nYXJpc2JhczANBgkqhkiG9w0BAQsFAAOCAgEAqLh0QEdxN0ccBrb16mJs4E/oHOQ8\nzyLmmLKRoQLRjTsJZYYBD09gmkYVBHr8O3kaxqjdGdrmcaeS/Tq4s+zxJ8IsEuEM\nv9akgkPt8tduBZmvev5SRKjun4nZZnS2UduUy2+zuCctBds0rqxeAH1A9tEf/nZU\n8BkCIZ6g8hnsOCKpl0q4AkyHCYaf0YKIMmmP+blLd6Xe3zIg0XLv3+x+PSAyK4lz\nNPZ/ZTAU5y91KrGNJ6ZPZTNFUonnUd1VRPS9poFf3tammNVTgWHpSLJLR3S7v3jV\nuqHSV2IbOnuXgZh7GA8JqhPuSO946ZJe5XbIh+NoaD4/h2i3ecEStcl97aQSpmb/\n3QjLiNeushtSftUs8M8YzLZyNfDE5J7reaW/dxp7gAK6Ic1kKGUbMcXBFJ8vHuU+\nlE0yN6E+Ah00e9a7wHjnBq2RmI/iPToRUVUap4nM8rZpSev9gvLtZTu5HHL2HDu4\nF09MGxx9gRZyHVUS+g7c1EihTYQ2egPF3JCiB6lctL/d7PbQAjhCxhF+MefadZJU\nv/jWTfsxFXRreT05GOJgMS+2bh0hiKozHyW/pW/kqcYNViv6QZ5xFfrZNO9Xs16v\nCTZfTuPPRyJQzhT51QzqIPVnLbajEYDX9C+BtVkGheezkTlEhxWg0SN2uDXt7n6E\n8ZKjCpnBfaD4koc=\n-----END CERTIFICATE-----\n",
+            "chainCA": {
+                "bigip": "/Common/ca-bundle.crt"
+            },
+            "privateKey": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEAznhXihzB5+bCzHfnYbTC74yWdyK4BsCckfqtqW5jJgRIBio9\nSjo6TjN64pMCrriaAN/lbeVD9bKcYxXicefUiymWWaHqLDP0YjxWNV+eGR7h024/\nPYGeMSb5Ig/Eco4UBYR4+BlYAwQGNHS0/v49ROu4BylXycbgzU4glZ7CcmfBaDmb\n3GqaWof8oJ+3YJvI6ZhiOOov+czj/zR8qvhJOhyH6DsEDlbtHhG3pbVKYLoOrkzy\ngA2EDLY3LwC8v+551j4QNo/uV2p/qSObiQkGfYpKg9C6saHPWcqByVHgTiHHwbS0\nIx90MS+2gGKMVfxf6bApkCv0GxgfR088FqTlSQIDAQABAoIBAAtVujmR9Ve7uI1E\n1mIr7Ck+Qrro4Ck3vQi7FjpXXfBV+xXCjyGSc4W8SAZlC3hH2GWMpSHsvJfCHdmH\nN6qo72dR6cgDLnHNiuCzPwjYVlu68SscMfLYmTSJ1xLGgpKG6AS7BnCZZJZqy8Po\ntdCLaNXuKmjTPVdtmIUQ4VNRd0uUOxHW+aKwVEaGfCKReisyawR8eLg6K2IdJn7n\nmL9pyIgICSMXa3Ky4JkuinGf+56ExHc5lYyg4LkRgYeuOVDKb9l6jCizG0fnJz2L\nPOOYEUp9+0GY8nF7vzUFvASBVNR+H/gkCYUOujmHlfvBU/nJz1828UhiOIM3PIpj\nFl97nQECgYEA9hj1jV8qHM3Fd1mmStqE1BqWxUBFTNgqPbU5cNWz0OqYXXVtwHll\nhHnM6/3Xm0UV2yni7Kj6Va/eKS9PNgJiGna8O3GbEuI3INkQhH8YAtAfH05c/xLX\nJsq0uzDBqWoRwJj3q0TV2vDLPhKOb+k8QIXjRXiU2do+7jZApGwIGwECgYEA1scu\nrUYH3S5bUcR6/Fs2uEOePfoDRdqc/nYpABMGsfnBFCRMUF8+ZKBPUTdTIaxba+7t\nQ1P2dGhoaJA9oIhKQJ+GjZJtgfSWU0NYGrldGGD0QRd24OaLfxoax8MGm2zJWVS6\ndjJ9Ds4Li7/fY+GE4pi+Gaf38waZyzYHnB4PMkkCgYEAq0fx14QtfkClOA0YVS7D\nlhAvcXfrA7HLrIkuQl8qOLSeeSWazoRvaIWRX4qb/kBWFuSPQOHW4b52pDl+Kvv7\npamQFttZ8AmsDtukyGLgpkyN7K8QwKMvRZt9sG8dyri9REvyzKwrH6fJ/RjTNAaj\n3dCRvq9PAlUIyajO0uExvwECgYA8hSXW94vRvHVJBidtoro5k/wsFJ4FegORBHSr\nK7FQR0MrzMqgPyZSroWLKh7Ht0yPjmTW+vrQdHcvN63V5XGe4hTFIcSvwN73GVvj\nM+ZSr0dEbDs4Rl56cz2mmoLrGu1luaVNFw78M/025Nsqxupt+4JdsmIA3hRKGbBt\nQl8f2QKBgQCoi2K8fLBaMoAYRhdGnA+P9PnUv0NYXm3ZPSqbVRf2EY8MFKV3T2b1\nGSpYiWSdntGiRkFPcx9avsbqXF2sSp8fRVfQdgrb2OozqSV8hotckVkPDgkEpzao\nJOXIiOX37NbxUuWF1iGEgl/QV514cHP6SCD+UdPi4x0rO3h6MwoIrg==\n-----END RSA PRIVATE KEY-----\n"
+        },
+        "Cert_SSSL_AP61501_AP61501_staging_bnpparisbas": {
+            "class": "Certificate",
+            "certificate": {
+                "bigip": "/Common/default.crt"
+            },
+            "chainCA": {
+                "bigip": "/Common/ca-bundle.crt"
+            },
+            "privateKey": {
+                "bigip": "/Common/default.key"
+            }
+        },
+        "HTTP_AP61501_AP61501_staging_bnpparisbas_": {
+            "class": "Monitor",
+            "adaptive": false,
+            "monitorType": "http",
+            "receive": "^HTTP/1.. 1..|^HTTP/1.. 2..|^HTTP/1.. 3..",
+            "send": "GET / HTTP/1.1\\r\\nHost:AP61501.staging.bnpparisbas\\r\\nConnection: Close\\r\\n\\r\\n"
+        },
+        "HTTP_POL_AP61501_AP61501_staging_bnpparisbas": {
+            "class": "Endpoint_Policy",
+            "rules": [
+                {
+                    "name": "AP61501_staging_bnpparisbas_",
+                    "actions": [
+                        {
+                            "event": "request",
+                            "select": {
+                                "pool": {
+                                    "use": "P_AP61501_staging_bnpparisbas__http_443"
+                                }
+                            },
+                            "type": "forward"
+                        },
+                        {
+                            "enable": false,
+                            "type": "clientSsl"
+                        },
+                        {
+                            "event": "response",
+                            "insert": {
+                                "name": "X-XSS-Protection",
+                                "value": "1; mode=block"
+                            },
+                            "type": "httpHeader"
+                        },
+                        {
+                            "event": "response",
+                            "insert": {
+                                "name": "X-Frame-Options",
+                                "value": "SAMEORIGIN"
+                            },
+                            "type": "httpHeader"
+                        },
+                        {
+                            "event": "response",
+                            "insert": {
+                                "name": "X-Content-Type-Options",
+                                "value": "nosniff"
+                            },
+                            "type": "httpHeader"
+                        },
+                        {
+                            "event": "response",
+                            "insert": {
+                                "name": "X-Content-Security-Policy",
+                                "value": "default-src 'self'"
+                            },
+                            "type": "httpHeader"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "name": "Host",
+                            "all": {
+                                "operand": "starts-with",
+                                "values": [
+                                    "AP61501.staging.bnpparisbas"
+                                ]
+                            },
+                            "event": "request",
+                            "type": "httpHeader"
+                        }
+                    ]
+                }
+            ]
+        },
+        "P_AP61501_staging_bnpparisbas__http_443": {
+            "class": "Pool",
+            "loadBalancingMode": "least-connections-member",
+            "members": [
+                {
+                    "adminState": "enable",
+                    "enable": true,
+                    "priorityGroup": 10,
+                    "serverAddresses": [
+                        "10.215.130.10"
+                    ],
+                    "servicePort": 80,
+                    "shareNodes": true
+                },
+                {
+                    "adminState": "enable",
+                    "enable": true,
+                    "priorityGroup": 10,
+                    "serverAddresses": [
+                        "10.215.130.11"
+                    ],
+                    "servicePort": 80,
+                    "shareNodes": true
+                }
+            ],
+            "minimumMembersActive": 0,
+            "monitors": [
+                {
+                    "use": "HTTP_AP61501_AP61501_staging_bnpparisbas_"
+                }
+            ]
+        },
+        "PrfCSSL_AP61501_AP61501_staging_bnpparisbas": {
+            "class": "TLS_Server",
+            "certificates": [
+                {
+                    "certificate": "Cert_AP61501_AP61501_staging_bnpparisbas"
+                }
+            ],
+            "ciphers": "DEFAULT"
+        },
+        "PrfCompress_AP61501_AP61501_staging_bnpparisbas": {
+            "class": "HTTP_Compress",
+            "contentTypeIncludes": [
+                "text/",
+                "application/(xml|json|x-javascript|javascript)"
+            ],
+            "gzipLevel": 6,
+            "uriIncludes": [
+                ".*"
+            ]
+        },
+        "PrfCookie_AP61501_AP61501_staging_bnpparisbas": {
+            "class": "Persist",
+            "cookieMethod": "insert",
+            "persistenceMethod": "cookie"
+        },
+        "PrfHTTP2_AP61501_AP61501_staging_bnpparisbas": {
+            "class": "HTTP2_Profile",
+            "enforceTlsRequirements": false
+        },
+        "PrfHTTP_AP61501_AP61501_staging_bnpparisbas": {
+            "class": "HTTP_Profile",
+            "hstsIncludeSubdomains": true,
+            "hstsInsert": true,
+            "hstsPeriod": 15552000,
+            "rewriteRedirects": "all",
+            "serverHeaderValue": "SPI",
+            "xForwardedFor": true
+        },
+        "PrfOC_AP61501_AP61501_staging_bnpparisbas": {
+            "class": "Multiplex_Profile",
+            "sourceMask": "255.255.255.255"
+        },
+        "PrfSSSL_AP61501_AP61501_staging_bnpparisbas": {
+            "class": "TLS_Client",
+            "ciphers": "!EXPORT:!DH:RSA+RC4:RSA+AES:RSA+DES:RSA+3DES:ECDHE+AES:ECDHE+3DES:@SPEED",
+            "clientCertificate": "Cert_SSSL_AP61501_AP61501_staging_bnpparisbas"
+        },
+        "V_AP61501_AP61501_staging_bnp_http_tcp_443": {
+            "class": "Service_HTTPS",
+            "remark": "AP61501.staging.bnpparisbas",
+            "clientTLS": "PrfSSSL_AP61501_AP61501_staging_bnpparisbas",
+            "persistenceMethods": [
+                {
+                    "use": "PrfCookie_AP61501_AP61501_staging_bnpparisbas"
+                }
+            ],
+            "policyEndpoint": "HTTP_POL_AP61501_AP61501_staging_bnpparisbas",
+            "profileHTTP": {
+                "use": "PrfHTTP_AP61501_AP61501_staging_bnpparisbas"
+            },
+            "profileHTTP2": {
+                "use": "PrfHTTP2_AP61501_AP61501_staging_bnpparisbas"
+            },
+            "profileHTTPCompression": {
+                "use": "PrfCompress_AP61501_AP61501_staging_bnpparisbas"
+            },
+            "profileMultiplex": {
+                "use": "PrfOC_AP61501_AP61501_staging_bnpparisbas"
+            },
+            "profileTCP": "normal",
+            "redirect80": true,
+            "serverTLS": "PrfCSSL_AP61501_AP61501_staging_bnpparisbas",
+            "snat": "auto",
+            "virtualAddresses": [
+                "172.20.0.23"
+            ],
+            "virtualPort": 443
+        }
+    }
+}

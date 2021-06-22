@@ -1,0 +1,54 @@
+{
+    "AP62285_e7ff425f1d2387a81_fastl4_tcp_8080": {
+        "class": "Application",
+        "template": "generic",
+        "P_AP62286_staging_bnpparisbas_tcp_8080": {
+            "class": "Pool",
+            "loadBalancingMode": "least-connections-member",
+            "members": [
+                {
+                    "adminState": "enable",
+                    "enable": true,
+                    "priorityGroup": 10,
+                    "serverAddresses": [
+                        "10.215.130.10"
+                    ],
+                    "servicePort": 80,
+                    "shareNodes": true
+                },
+                {
+                    "adminState": "enable",
+                    "enable": true,
+                    "priorityGroup": 10,
+                    "serverAddresses": [
+                        "10.215.130.11"
+                    ],
+                    "servicePort": 80,
+                    "shareNodes": true
+                }
+            ],
+            "minimumMembersActive": 0,
+            "monitors": [
+                "tcp"
+            ]
+        },
+        "PrfFastl4_AP62285_AP62286_staging_bnpparisbas": {
+            "class": "L4_Profile",
+            "idleTimeout": 300
+        },
+        "V_AP62285_e7ff425f1d2387a81_fastl4_tcp_8080": {
+            "class": "Service_L4",
+            "remark": "AP62286.staging.bnpparisbas",
+            "pool": "P_AP62286_staging_bnpparisbas_tcp_8080",
+            "profileL4": {
+                "use": "PrfFastl4_AP62285_AP62286_staging_bnpparisbas"
+            },
+            "securityLogProfiles": [],
+            "snat": "auto",
+            "virtualAddresses": [
+                "172.20.0.11"
+            ],
+            "virtualPort": 8080
+        }
+    }
+}

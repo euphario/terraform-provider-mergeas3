@@ -1,0 +1,163 @@
+{
+    "AP62279_AP62280_staging_bnp_http_tcp_8080": {
+        "class": "Application",
+        "template": "generic",
+        "HTTP_AP62279_AP62280_staging_bnpparisbas_": {
+            "class": "Monitor",
+            "adaptive": false,
+            "monitorType": "http",
+            "receive": "^HTTP/1.. 1..|^HTTP/1.. 2..|^HTTP/1.. 3..",
+            "send": "GET / HTTP/1.1\\r\\nHost:AP62280.staging.bnpparisbas\\r\\nConnection: Close\\r\\n\\r\\n"
+        },
+        "HTTP_POL_AP62279_AP62280_staging_bnpparisbas": {
+            "class": "Endpoint_Policy",
+            "rules": [
+                {
+                    "name": "AP62280_staging_bnpparisbas_",
+                    "actions": [
+                        {
+                            "event": "request",
+                            "select": {
+                                "pool": {
+                                    "use": "P_AP62280_staging_bnpparisbas__http_8080"
+                                }
+                            },
+                            "type": "forward"
+                        },
+                        {
+                            "event": "response",
+                            "insert": {
+                                "name": "X-XSS-Protection",
+                                "value": "1; mode=block"
+                            },
+                            "type": "httpHeader"
+                        },
+                        {
+                            "event": "response",
+                            "insert": {
+                                "name": "X-Frame-Options",
+                                "value": "SAMEORIGIN"
+                            },
+                            "type": "httpHeader"
+                        },
+                        {
+                            "event": "response",
+                            "insert": {
+                                "name": "X-Content-Type-Options",
+                                "value": "nosniff"
+                            },
+                            "type": "httpHeader"
+                        },
+                        {
+                            "event": "response",
+                            "insert": {
+                                "name": "X-Content-Security-Policy",
+                                "value": "default-src 'self'"
+                            },
+                            "type": "httpHeader"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "name": "Host",
+                            "all": {
+                                "operand": "starts-with",
+                                "values": [
+                                    "AP62280.staging.bnpparisbas"
+                                ]
+                            },
+                            "event": "request",
+                            "type": "httpHeader"
+                        }
+                    ]
+                }
+            ]
+        },
+        "P_AP62280_staging_bnpparisbas__http_8080": {
+            "class": "Pool",
+            "loadBalancingMode": "least-connections-member",
+            "members": [
+                {
+                    "adminState": "enable",
+                    "enable": true,
+                    "priorityGroup": 10,
+                    "serverAddresses": [
+                        "10.215.130.10"
+                    ],
+                    "servicePort": 80,
+                    "shareNodes": true
+                },
+                {
+                    "adminState": "enable",
+                    "enable": true,
+                    "priorityGroup": 10,
+                    "serverAddresses": [
+                        "10.215.130.11"
+                    ],
+                    "servicePort": 80,
+                    "shareNodes": true
+                }
+            ],
+            "minimumMembersActive": 0,
+            "monitors": [
+                {
+                    "use": "HTTP_AP62279_AP62280_staging_bnpparisbas_"
+                }
+            ]
+        },
+        "PrfCompress_AP62279_AP62280_staging_bnpparisbas": {
+            "class": "HTTP_Compress",
+            "contentTypeIncludes": [
+                "text/",
+                "application/(xml|json|x-javascript|javascript)"
+            ],
+            "gzipLevel": 6,
+            "uriIncludes": [
+                ".*"
+            ]
+        },
+        "PrfCookie_AP62279_AP62280_staging_bnpparisbas": {
+            "class": "Persist",
+            "cookieMethod": "insert",
+            "persistenceMethod": "cookie"
+        },
+        "PrfHTTP_AP62279_AP62280_staging_bnpparisbas": {
+            "class": "HTTP_Profile",
+            "serverHeaderValue": "SPI",
+            "xForwardedFor": true
+        },
+        "PrfOC_AP62279_AP62280_staging_bnpparisbas": {
+            "class": "Multiplex_Profile",
+            "sourceMask": "255.255.255.255"
+        },
+        "V_AP62279_AP62280_staging_bnp_http_tcp_8080": {
+            "class": "Service_HTTP",
+            "remark": "AP62280.staging.bnpparisbas",
+            "persistenceMethods": [
+                {
+                    "use": "PrfCookie_AP62279_AP62280_staging_bnpparisbas"
+                }
+            ],
+            "policyEndpoint": "HTTP_POL_AP62279_AP62280_staging_bnpparisbas",
+            "profileHTTP": {
+                "use": "PrfHTTP_AP62279_AP62280_staging_bnpparisbas"
+            },
+            "profileHTTPCompression": {
+                "use": "PrfCompress_AP62279_AP62280_staging_bnpparisbas"
+            },
+            "profileMultiplex": {
+                "use": "PrfOC_AP62279_AP62280_staging_bnpparisbas"
+            },
+            "securityLogProfiles": [
+                {
+                    "bigip": "/Common/logprofile_dos"
+                }
+            ],
+            "snat": "auto",
+            "virtualAddresses": [
+                "172.20.0.9"
+            ],
+            "virtualPort": 8080
+        }
+    }
+}
